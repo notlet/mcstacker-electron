@@ -1,17 +1,47 @@
 {
-  "scripts": {
-    "start": "electron ."
-  },
-  "name": "mcstacker-electron",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "letgame",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "electron": "^24.3.0",
-    "electron-builder": "^23.6.0"
-  },
-  "description": "A simple MCStacker port on Electron",
-  "repository": "https://github.com/LetGame/mcstacker-electron"
+    "scripts": {
+        "start": "electron ."
+    },
+    "name": "mcstacker-electron",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "letgame",
+    "license": "MIT",
+    "private": false,
+    "devDependencies": {
+        "electron": "^24.3.0",
+        "electron-builder": "^23.6.0"
+    },
+    "description": "A simple MCStacker port on Electron",
+    "repository": "https://github.com/LetGame/mcstacker-electron",
+    "build": {
+        "productName": "MCStacker",
+        "appId": "org.mcstacker",
+        "dmg": {
+            "contents": [
+                {
+                    "x":130,
+                    "y":220
+                },
+                {
+                    "x":410,
+                    "y":220,
+                    "type":"link",
+                    "path":"/Applications"
+                }
+            ]
+        },
+        "linux": {
+            "icon": "build/icon/",
+            "target": [
+                "tar.gz",
+                "AppImage"
+            ],
+            "category": "Utility"
+        },
+        "directories": {
+            "buildResources": "build",
+            "output": "dist"
+        }
+    }
 }

@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu } = require('electron');
 
 app.on('ready', () => {
-    const mainWindow = new BrowserWindow();
+    const mainWindow = new BrowserWindow({icon: `${__dirname}/icon/Icon-512x512.png`});
     const menuTemplate = [
         {
             label: 'Quit',
